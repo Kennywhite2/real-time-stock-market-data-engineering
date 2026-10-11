@@ -152,4 +152,3 @@ The originally shared code contained hardcoded credentials. This sanitized publi
 
 Built a multi-component streaming and analytics prototype connecting Finnhub API, Kafka, SeaweedFS S3, Apache Airflow, Snowflake, dbt and Power BI. Demonstrated JSON ingestion, SQL modeling, task orchestration, interactive analytics and debugging of a pagination defect that had hidden three of five stock symbols.
 
-[CV-ready project bullets](docs/cv_bullets.md)
