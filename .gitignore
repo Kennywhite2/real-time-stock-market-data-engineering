@@ -1,0 +1,43 @@
+# Secrets: never commit real credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+*.key
+*credentials*.json
+
+# Python / virtual environments
+venv/
+dbt_venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Airflow / Docker runtime
+infra/logs/
+infra/plugins/__pycache__/
+logs/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# dbt artifacts and local Snowflake profiles
+**/target/
+**/dbt_packages/
+**/logs/
+profiles.yml
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data cache and downloaded JSON records
+/tmp/
+cache/
+minio_downloads/
+*.zip

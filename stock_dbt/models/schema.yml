@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: bronze_stg_stock_quotes
+    description: "Unpacks Finnhub JSON VARIANT quote fields from Snowflake Bronze."
+    columns:
+      - name: symbol
+        data_tests: [not_null]
+      - name: current_price
+        data_tests: [not_null]
+  - name: silver_clean_stock_quotes
+    description: "Selects and rounds quote fields, excluding records without current prices."
+    columns:
+      - name: symbol
+        data_tests: [not_null]
+      - name: current_price
+        data_tests: [not_null]
+  - name: gold_kpi
+    description: "Latest loaded quote per stock symbol for KPI cards."
+    columns:
+      - name: symbol
+        data_tests: [not_null, unique]
+  - name: gold_treechart
+    description: "Average quote price on the latest observed trading date, plus optional dispersion measures."
+    columns:
+      - name: symbol
+        data_tests: [not_null, unique]

@@ -1,0 +1,15 @@
+# Place this content in C:\Users\YOUR_USERNAME\.dbt\profiles.yml
+# or pass --profiles-dir, and set SNOWFLAKE_* environment variables first.
+stock_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', '') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      database: "{{ env_var('SNOWFLAKE_DB', 'STOCKS_DBM') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'COMMON') }}"
+      threads: 4
